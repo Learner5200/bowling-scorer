@@ -14,8 +14,9 @@ public class FrameTest {
 
     @Test
     public void rollAddsItsValueToRolls() {
-        frame.roll(5);
-        Assertions.assertEquals(5, frame.rolls[0]);
+        frame.handleRoll(5);
+        int firstRollValue = frame.getRolls().get(0);
+        Assertions.assertEquals(5, firstRollValue);
     }
 
 }
