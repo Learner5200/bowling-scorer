@@ -14,8 +14,25 @@ public class GameTest {
     }
 
     @Test
-    public void testGutterGame() {
+    public void newGameHasZeroScore() {
+        Assertions.assertEquals(0, game.calculateScore());
+    }
+
+    @Test
+    public void rollFiveHasFiveScore() {
+        game.roll(5);
+        Assertions.assertEquals(5, game.calculateScore());
+    }
+
+    @Test
+    public void gutterGameHasZeroScore() {
         for (int i = 0; i < 20; i++) game.roll(0);
         Assertions.assertEquals(0, game.calculateScore());
     }
+
+//    @Test
+//    public void perfectGameHas300Score() {
+//        for (int i = 0; i < 12; i++) game.roll(10);
+//        Assertions.assertEquals(300, game.calculateScore());
+//    }
 }
